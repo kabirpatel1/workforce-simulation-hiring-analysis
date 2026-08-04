@@ -107,6 +107,7 @@ The Senior Technician compensates by handling standard jobs approximately 40% of
 *SeniorStartsStd process logic. A decide step checks whether the Senior is allocated, then assigns the state variable and increments the tally statistic.*
 
 ![SVR Standard Add-On Processes](images/Add_on_Process.png)
+
 *Before and after processing triggers on SVR_Standard that track when the Senior begins and finishes a standard job.*
 
 ---
