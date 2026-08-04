@@ -101,9 +101,11 @@ The Senior Technician compensates by handling standard jobs approximately 40% of
 ## Model Logic Screenshots
 
 ![Add-On Processes](images/Processes.png)
+
 *Three add-on process triggers used to dynamically update SVR_Standard capacity based on queue state and Senior availability.*
 
 ![Senior Starts Standard Process](images/SeniorStartsStd.png)
+
 *SeniorStartsStd process logic. A decide step checks whether the Senior is allocated, then assigns the state variable and increments the tally statistic.*
 
 ![SVR Standard Add-On Processes](images/Add_on_Process.png)
