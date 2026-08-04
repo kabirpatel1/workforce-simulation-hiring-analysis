@@ -81,17 +81,6 @@ Both scenarios were run for 5,000 hours across 20 replications each.
 
 ### KPI Summary Table
 
-| KPI | Scenario | Mean | 90% CI Lower | 90% CI Upper |
-|-----|----------|------|-------------|-------------|
-| Avg Time in System, Standard (hrs) | Base_1Junior | 503.74 | 488.08 | 519.39 |
-| Avg Time in System, Standard (hrs) | Scenario2Alt_2Juniors | 503.74 | 488.08 | 519.39 |
-| Avg Time in System, Complex (hrs) | Base_1Junior | 5.37 | 5.31 | 5.44 |
-| Avg Time in System, Complex (hrs) | Scenario2Alt_2Juniors | 5.37 | 5.31 | 5.44 |
-| Avg Number in System, Standard | Base_1Junior | 0.399 | 0.39 | 0.41 |
-| Avg Number in System, Standard | Scenario2Alt_2Juniors | 0.399 | 0.39 | 0.41 |
-| Avg Number in System, Complex | Base_1Junior | 1598.5 | 1571.18 | 1625.82 |
-| Avg Number in System, Complex | Scenario2Alt_2Juniors | 1598.5 | 1571.18 | 1625.82 |
-
 ![Confidence Interval Table](images/CIs.png)
 *90% confidence intervals for all four KPIs across both scenarios. Fully overlapping intervals confirm no statistically meaningful difference between staffing levels.*
 
