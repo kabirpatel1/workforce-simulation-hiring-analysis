@@ -7,7 +7,7 @@
 
 A university Tech Repair Center was experiencing long wait times across two job types, Standard Maintenance and Complex Repairs, and the manager needed a data-driven recommendation on whether to hire a second Junior Technician. A discrete-event simulation was built in Simio to model the current system and test the impact of an additional hire under identical conditions.
 
-Key finding: **adding a second Junior Technician produced no measurable improvement across any KPI**. Average time in system for Standard jobs remained at 503.7 hours under both scenarios, with fully overlapping confidence intervals. The root cause is a structurally overloaded queue, where Standard jobs arrive faster than a single junior can process them, making an additional hire insufficient to resolve the bottleneck.
+Key finding: Adding a second Junior Technician produced no measurable improvement across any KPI. Average time in system for Standard jobs remained at 503.7 hours under both scenarios, with fully overlapping confidence intervals. The root cause is a structurally overloaded queue, where Standard jobs arrive faster than a single junior can process them, making an additional hire insufficient to resolve the bottleneck.
 
 **Recommendation:** Do not hire a second Junior Technician until the underlying queue instability is addressed. The current arrival rate of 1 job/hour against a mean service time of ~1.25 hours per junior creates a utilisation rate above 1, meaning the queue grows indefinitely regardless of headcount. A process redesign or service time reduction should be explored first.
 
@@ -133,14 +133,6 @@ The Senior Technician compensates by handling standard jobs approximately 40% of
 - Add a warm-up period analysis to ensure results reflect steady-state behaviour rather than startup conditions
 - Test additional scenarios such as reducing mean service time or lowering the Senior's overflow threshold
 - Add a cost model to the experiment, comparing the cost of hiring against the value of reduced wait times to produce a break-even analysis for the manager
-
----
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `Model_Final.spfx` | Simio simulation model file |
 
 ---
 
