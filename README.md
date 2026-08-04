@@ -7,7 +7,7 @@
 
 A university Tech Repair Center was experiencing long wait times across two job types, Standard Maintenance and Complex Repairs, and the manager needed a data-driven recommendation on whether to hire a second Junior Technician. A discrete-event simulation was built in Simio to model the current system and test the impact of an additional hire under identical conditions.
 
-Key finding: Adding a second Junior Technician produced no measurable improvement across any KPI. Average time in system for Standard jobs remained at 503.7 hours under both scenarios, with fully overlapping confidence intervals. The root cause is a structurally overloaded queue, where Standard jobs arrive faster than a single junior can process them, making an additional hire insufficient to resolve the bottleneck.
+Key finding: **Adding a second Junior Technician produced no measurable improvement across any KPI.** Average time in system for Standard jobs remained at 503.7 hours under both scenarios, with fully overlapping confidence intervals. The root cause is a structurally overloaded queue, where Standard jobs arrive faster than a single junior can process them, making an additional hire insufficient to resolve the bottleneck.
 
 **Recommendation:** Do not hire a second Junior Technician until the underlying queue instability is addressed. The current arrival rate of 1 job/hour against a mean service time of ~1.25 hours per junior creates a utilisation rate above 1, meaning the queue grows indefinitely regardless of headcount. A process redesign or service time reduction should be explored first.
 
@@ -18,17 +18,17 @@ Key finding: Adding a second Junior Technician produced no measurable improvemen
 The Tech Repair Center handles two types of jobs: Standard Maintenance (high volume, simpler) and Complex Repairs (low volume, specialist). The current setup has one Junior Technician handling standard jobs and one Senior Technician handling complex repairs, with conditional overflow logic allowing the Senior to assist with standard jobs under specific conditions.
 
 The manager's question was direct:
-> *Should we hire a second Junior Technician to reduce wait times?*
+***Should we hire a second Junior Technician to reduce wait times?***
 
 This simulation was built to answer that question with statistical confidence rather than intuition, comparing KPIs across 20 replications of a 5,000-hour runtime under both staffing scenarios.
 
-**Primary stakeholder:** The Tech Repair Center manager, who needs a clear hire or no-hire recommendation backed by simulation evidence.
+**Primary stakeholder:** The Tech Repair Center manager, who needs a clear hire or no hire recommendation backed by simulation evidence.
 
 ---
 
 ## Methodology
 
-A discrete-event simulation was built in **Simio** to model the full system logic, including conditional resource allocation, custom state tracking, and a two-scenario experiment.
+A discrete-event simulation was built in **Simio** to model the full system logic, including conditional resource allocation, custom state tracking, and a two scenario experiment.
 
 **System logic implemented:**
 1. Two entity types (Standard Maintenance jobs, Complex Repair jobs) with separate arrival sources and servers
@@ -64,7 +64,7 @@ A discrete-event simulation was built in **Simio** to model the full system logi
 
 **Statistical Concepts:**
 - Confidence interval construction and interpretation
-- Scenario comparison using non-overlapping CI logic
+- Scenario comparison using non overlapping CI logic
 - Queue stability analysis (utilisation rate)
 - Discrete-event simulation design principles
 
@@ -103,9 +103,9 @@ The Senior Technician compensates by handling standard jobs approximately 40% of
 
 **Recommendation to the manager:** Do not proceed with hiring a second Junior Technician at this stage. The data shows the hire would produce no measurable improvement and cannot be justified by the simulation evidence. Instead, the following should be investigated before any hiring decision is made:
 
-1. **Reduce standard job service times** — through better tooling, training, or process standardisation, bringing mean service time below 1 hour to achieve a stable utilisation rate
-2. **Review the Senior's overflow threshold** — the current rule (queue > 3) may be too conservative, earlier Senior involvement could reduce backlog
-3. **Re-run the simulation** after implementing process changes to determine whether a second hire then produces a statistically significant improvement
+1. **Reduce standard job service times**: Through better tooling, training, or process standardisation, bringing mean service time below 1 hour to achieve a stable utilisation rate
+2. **Review the Senior's overflow threshold**: The current rule (queue > 3) may be too conservative, earlier Senior involvement could reduce backlog
+3. **Re-run the simulation**: After implementing process changes to determine whether a second hire then produces a statistically significant improvement
 
 ---
 
@@ -125,12 +125,12 @@ The Senior Technician compensates by handling standard jobs approximately 40% of
 ## Next Steps & Limitations
 
 **Limitations:**
-- The simulation uses hypothetical parameters — real-world validation would require actual job arrival and service time data from the center
+- The simulation uses hypothetical parameters. Real world validation would require actual job arrival and service time data from the center
 - The model assumes the Senior always follows the overflow rule as programmed, in practice human judgement may differ
 - Warm-up period was not explicitly modelled, which may affect steady-state accuracy
 
 **If I had more time:**
-- Add a warm-up period analysis to ensure results reflect steady-state behaviour rather than startup conditions
+- Add a warm up period analysis to ensure results reflect steady state behaviour rather than startup conditions
 - Test additional scenarios such as reducing mean service time or lowering the Senior's overflow threshold
 - Add a cost model to the experiment, comparing the cost of hiring against the value of reduced wait times to produce a break-even analysis for the manager
 
